@@ -1,0 +1,37 @@
+  <div class="card" *ngIf="productDetail()">
+    <div class="card-header">
+      {{pageTitle()}}
+    </div>
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3">Name:</div>
+        <div class="col-md-6">{{productDetail().title}}</div>
+        <div class="col-md-3">
+          <button class='btn btn-primary' (click)="addToCart(productDetail())">Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Category:</div>
+        <div class="col-md-6">{{productDetail().category}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Price:</div>
+        <div class="col-md-6">{{productDetail().price | number:'1.2-2'}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Description:</div>
+        <div class="col-md-6">{{productDetail().description}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Rating:</div>
+        <div class="col-md-6">{{productDetail().rating?.rate}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">Reviews:</div>
+        <div class="col-md-6">{{productDetail().rating?.count}}</div>
+      </div>
+    </div>
+  </div>
+
