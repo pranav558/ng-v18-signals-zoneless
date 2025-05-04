@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CartListComponent } from './cart-list.component';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('CartListComponent', () => {
   let component: CartListComponent;
@@ -8,7 +9,8 @@ describe('CartListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CartListComponent]
+      imports: [CartListComponent],
+      providers: [provideExperimentalZonelessChangeDetection()],
     })
     .compileComponents();
 
