@@ -1,14 +1,15 @@
-import { DecimalPipe, JsonPipe, NgIf } from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 import { ProductService } from './../product.service';
-import { Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { CartService } from '../../cart/cart.service';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [NgIf, DecimalPipe],
+  imports: [DecimalPipe],
   templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.scss'
+  styleUrl: './product-detail.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductDetailComponent {
   productService = inject(ProductService);

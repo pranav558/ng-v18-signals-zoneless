@@ -1,15 +1,16 @@
 import { CartService } from './../cart.service';
-import { NgIf, DecimalPipe, NgFor } from '@angular/common';
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CartItem } from '../cart';
 
 @Component({
   selector: 'app-cart-item',
   standalone: true,
-  imports: [NgIf, NgFor, DecimalPipe, FormsModule],
+  imports: [DecimalPipe, FormsModule],
   templateUrl: './cart-item.component.html',
   styleUrl: './cart-item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartItemComponent {
   item = input<CartItem>({ quantity: 0, detail: { id: 0, title: '', price: 0 } });

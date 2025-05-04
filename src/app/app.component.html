@@ -1,4 +1,7 @@
-<app-loader *ngIf="loaderService.isLoading()"></app-loader>
+
+@if (loaderService.isLoading()) {
+  <app-loader></app-loader>
+}
 <nav class="navbar navbar-expand navbar-light bg-light">
   <a class="navbar-brand">{{pageTitle}}</a>
   <ul class="navbar-nav">
@@ -13,7 +16,7 @@
         [routerLink]="['/cart']"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact : true}">Cart
-        <span class="badge bg-primary">{{cartCount()}}</span>
+        <span class="badge bg-primary">{{cartService.cartCount()}}</span>
         </a>
     </li>
   </ul>

@@ -12,9 +12,6 @@ export class ProductService {
   booksUrl = 'https://fakestoreapi.com/products';
 
   productId = signal<number | null>(null);
-  setproductId(productId: number): void {
-    this.productId.set(productId);
-  }
 
   products = toSignal(
     this.http.get<Item[]>(this.booksUrl).pipe(
@@ -32,4 +29,8 @@ export class ProductService {
       )
     )
   ), { initialValue: undefined });
+
+  setproductId(productId: number): void {
+    this.productId.set(productId);
+  }
 }

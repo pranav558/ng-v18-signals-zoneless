@@ -1,9 +1,8 @@
 <div class='row'>
   <div class='col-md-6'>
-    <div *ngFor="let item of cartItems()">
-      <app-cart-item [item]='item'/>
-    </div>
-
+    @for (item of cartItems(); track item) {
+        <app-cart-item [item]='item'/>
+    }
   </div>
   <div class='col-md-6'>
       <app-cart-total/>
