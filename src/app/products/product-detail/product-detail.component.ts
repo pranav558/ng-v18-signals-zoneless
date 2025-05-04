@@ -11,12 +11,12 @@ import { CartService } from '../../cart/cart.service';
   styleUrl: './product-detail.component.scss'
 })
 export class ProductDetailComponent {
-productService =inject(ProductService);
-cartService =inject(CartService);
-productDetail = this.productService.productDetail;
-pageTitle = computed(() => `Details for: ${this.productDetail()?.title}`);
+  productService = inject(ProductService);
+  cartService = inject(CartService);
+  productDetail = this.productService.productDetail;
+  pageTitle = computed(() => `Details for: ${this.productDetail()?.title}`);
 
-addToCart(product: any) {
-  this.cartService.addToCart(product);
-}
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
 }

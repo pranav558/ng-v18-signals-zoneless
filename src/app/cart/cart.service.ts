@@ -23,7 +23,7 @@ export class CartService {
   addToCart(cartItem: Item): void {
     const item = this.cartItems().find(item => item.detail.id === cartItem.id);
     if (item) {
-      this.updateInCart(cartItem, item.quantity+1);
+      this.updateInCart(cartItem, item.quantity + 1);
     } else {
       this.cartItems.update((items) => [...items, { detail: cartItem, quantity: 1 }]);
     }

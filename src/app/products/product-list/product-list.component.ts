@@ -18,6 +18,6 @@ export class ProductListComponent {
   productId = this.productService.productId;
 
   onSelect(productId: number): void {
-    this.productService.productId.set(productId);
+    this.productService.setproductId(productId);
   }
 }
